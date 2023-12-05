@@ -4,6 +4,10 @@
 
 Author: RAKSHANA B S (RB5118)
 
+Please note that I have replaced variables as per homework instructions for clarity:
+- 'B' refers to 'original_badnet'.
+- 'G' refers to 'RepairedNet'.
+
 ## Introduction
 This project focuses on designing a backdoor detector for BadNets trained on the YouTube Face dataset using the pruning defense technique discussed in class. The primary goal of the detector is to correctly classify inputs as either clean or backdoored. The input for the detector includes:
 
@@ -63,9 +67,7 @@ By following these steps, you'll be able to execute the code using your own data
 
 
 ## Method
-Please note that I have replaced variables as per homework instructions for clarity:
-- 'B' refers to 'original_badnet'.
-- 'G' refers to 'RepairedNet'.
+
 
 ### Pruning Defense
 We implemented the pruning defense by selectively removing channels in the last pooling layer of `original_badnet (B)`, just before the fully connected layers. Channels are removed one at a time, starting with those having the highest average activation values over the entire validation set. Pruning continues until the validation accuracy drops by a predefined percentage. The pruned network becomes the new network 'B'.
